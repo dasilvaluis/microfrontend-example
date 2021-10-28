@@ -13,7 +13,7 @@ export default function Counter() {
   }
 
   return (
-    <div className="page-counter">
+    <div className="counter">
       <h1>React Counter</h1>
       <div>
         <span>{ `Count: ${ count }` }</span>

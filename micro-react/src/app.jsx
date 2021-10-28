@@ -6,7 +6,7 @@ import './styles/app.scss';
 
 export default function App({ history }) {
   return (
-    <div className="app" data-testid="react-app">
+    <div className="react-app" data-testid="react-app">
       <Router history={ history }>
         <Switch>
           <Route path="/" exact>

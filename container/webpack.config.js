@@ -34,7 +34,8 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'container',
       remotes: {
-        MFEReact: 'MFEReact@http://localhost:3001/remoteEntry.js'
+        MFEReact: 'MFEReact@http://localhost:3001/remoteEntry.js',
+        MFEVue: 'MFEVue@http://localhost:3002/remoteEntry.js'
       },
       shared: packageJson.dependencies,
     }),

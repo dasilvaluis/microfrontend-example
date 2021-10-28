@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route, Link, Router, BrowserRouter } from 'react-router-dom';
 import ErrorBoundary from './components/error-boundary';
 import ReactCounterRoot from './components/react-counter';
+import VueAppRoot from './components/vue-app';
 
 const Header = () => (
   <header>
@@ -32,6 +33,11 @@ export default function App() {
           <Route path="/react" exact>
             <ErrorBoundary>
               <ReactCounterRoot />
+            </ErrorBoundary>
+          </Route>
+          <Route path="/vue" exact>
+            <ErrorBoundary>
+              <VueAppRoot />
             </ErrorBoundary>
           </Route>
         </Switch>
