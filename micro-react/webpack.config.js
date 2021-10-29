@@ -37,6 +37,7 @@ module.exports = {
       filename: 'remoteEntry.js',
       exposes: {
         '.': './src/bootstrap',
+        './counter': './src/pages/counter',
       },
       shared: packageJson.dependencies,
     }),

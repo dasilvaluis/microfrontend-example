@@ -8,17 +8,21 @@
 </template>
 
 <script>
+import { triggerEvent } from "./utils/events.js"
+
 export default {
   name: "Counter",
   data() {
-    return { count: 0 };
+    return { triggerEvent, count: 0 };
   },
   methods: {
     increment() {
       this.count++;
+      triggerEvent('countChange', { step: 1, count: this.count });
     },
     decrement() {
       this.count--;
+      triggerEvent('countChange', { step: -1, count: this.count });
     },
   },
 };

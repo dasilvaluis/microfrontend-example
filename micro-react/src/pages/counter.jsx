@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { triggerEvent } from '../utils/events';
 
 const initialCount = 0;
 const buttonStep = 1;
@@ -6,9 +7,20 @@ const buttonStep = 1;
 export default function Counter() {
   const [ count, setCount ] = useState(initialCount);
 
+  function handleCountChange(step, count) {    
+    triggerEvent('countChange', { step, count })
+  }
+
   function increaseCountBy(step) {
     return () => {
-      setCount((prev) => prev + step);
+      setCount((prev) => {
+        const result = prev + step;
+
+        handleCountChange(step, result)
+
+        return prev + step;
+      });
+      
     };
   }
 
